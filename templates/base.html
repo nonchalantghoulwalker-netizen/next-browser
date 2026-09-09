@@ -1,0 +1,62 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-gray-50">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyHub</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- HTMX CDN for dynamic interactions -->
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="h-full">
+    <div class="flex h-screen overflow-hidden">
+        
+        <!-- Sidebar -->
+        <aside class="hidden md:flex md:flex-col w-64 bg-white border-r border-gray-200">
+            <div class="flex flex-col flex-1 overflow-y-auto">
+                <!-- Logo -->
+                <div class="p-6 border-b border-gray-200">
+                    <h1 class="text-2xl font-bold text-indigo-600">StudyHub</h1>
+                    <p class="text-xs text-gray-500 mt-1">Your digital workspace</p>
+                </div>
+
+                <!-- Navigation -->
+                <nav class="flex-1 p-4 space-y-1">
+                    <a href="/" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium bg-indigo-50 text-indigo-700">
+                        <i data-lucide="layout-dashboard" class="w-5 h-5"></i> Dashboard
+                    </a>
+                    <a href="/ai" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100">
+                        <i data-lucide="bot" class="w-5 h-5"></i> AI Study Hub
+                    </a>
+                    <a href="/files" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100">
+                        <i data-lucide="folder-open" class="w-5 h-5"></i> My Files
+                    </a>
+                    <a href="/notes" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100">
+                        <i data-lucide="file-text" class="w-5 h-5"></i> Notes
+                    </a>
+                    <a href="/sticky" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100">
+                        <i data-lucide="sticky-note" class="w-5 h-5"></i> Sticky Notes
+                    </a>
+                    <a href="/habits" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100">
+                        <i data-lucide="target" class="w-5 h-5"></i> Habit Tracker
+                    </a>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="flex-1 overflow-y-auto p-4 md:p-8">
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
