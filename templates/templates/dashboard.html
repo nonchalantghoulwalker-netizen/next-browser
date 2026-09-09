@@ -1,0 +1,42 @@
+<!-- templates/dashboard.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<div class="max-w-5xl mx-auto">
+    <h1 class="text-3xl font-bold mb-2">Welcome back, {{ user_name }}! 👋</h1>
+    <p class="text-gray-500 mb-8">Here is your study dashboard for today.</p>
+    
+    <!-- Dashboard Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-6 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex items-center gap-3 mb-3">
+                <div class="p-2 bg-indigo-100 rounded-lg text-indigo-600">
+                    <i data-lucide="bot" class="w-5 h-5"></i>
+                </div>
+                <h3 class="font-semibold text-lg">AI Study Hub</h3>
+            </div>
+            <p class="text-sm text-gray-500">Ask a question or summarize a document.</p>
+        </div>
+
+        <div class="p-6 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex items-center gap-3 mb-3">
+                <div class="p-2 bg-green-100 rounded-lg text-green-600">
+                    <i data-lucide="target" class="w-5 h-5"></i>
+                </div>
+                <h3 class="font-semibold text-lg">Today's Habits</h3>
+            </div>
+            <p class="text-sm text-gray-500">0 of 3 habits completed.</p>
+        </div>
+
+        <div class="p-6 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex items-center gap-3 mb-3">
+                <div class="p-2 bg-amber-100 rounded-lg text-amber-600">
+                    <i data-lucide="folder-open" class="w-5 h-5"></i>
+                </div>
+                <h3 class="font-semibold text-lg">Recent Files</h3>
+            </div>
+            <p class="text-sm text-gray-500">You have 12 files uploaded.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
